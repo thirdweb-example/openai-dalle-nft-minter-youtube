@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@thirdweb-dev/engine": "^0.0.1",
+    "@thirdweb-dev/react": "^4.1.1",
+    "@thirdweb-dev/sdk": "^4.0.10",
+    "ethers": "^5.7.2",
+    "next": "14.0.1",
+    "openai": "^4.16.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.1"
+    "eslint-config-next": "14.0.1",
+    "typescript": "^5"
   }
 }
