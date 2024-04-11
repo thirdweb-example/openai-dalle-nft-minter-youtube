@@ -5,13 +5,15 @@ const {
     ENGINE_URL,
     THIRDWEB_SECRET_KEY,
     BACKEND_WALLET_ADDRESS,
+    CHAIN_ID,
 } = process.env;
 
 export async function POST(req: Request) {
     if(
         !ENGINE_URL ||
         !THIRDWEB_SECRET_KEY ||
-        !BACKEND_WALLET_ADDRESS
+        !BACKEND_WALLET_ADDRESS ||
+        !CHAIN_ID
     ) {
         throw new Error("Missing environment variables");
     }
@@ -20,10 +22,10 @@ export async function POST(req: Request) {
     console.log("userImage", userImage);
     console.log("address", address);
 
-    console.log(`${ENGINE_URL}/contract/mumbai/${NFT_CONTRACT_ADDRESS}/erc721/mint-to`);
+    console.log(`${ENGINE_URL}/contract/${CHAIN_ID}/${NFT_CONTRACT_ADDRESS}/erc721/mint-to`);
 
     const res = await fetch(
-        `${ENGINE_URL}/contract/mumbai/${NFT_CONTRACT_ADDRESS}/erc721/mint-to`,
+        `${ENGINE_URL}/contract/${CHAIN_ID}/${NFT_CONTRACT_ADDRESS}/erc721/mint-to`,
         {
             method: "POST",
             headers: {
