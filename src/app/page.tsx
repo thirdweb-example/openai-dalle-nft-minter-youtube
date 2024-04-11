@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Home() {
   return (
     <ThirdwebProvider
-      activeChain="mumbai"
+      activeChain="<chain_id>"
       clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
       supportedWallets={[
         embeddedWallet()
